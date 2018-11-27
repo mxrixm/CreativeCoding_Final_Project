@@ -44,47 +44,40 @@ void draw (){
   pushMatrix();
   rotate(theta*1.5);
   translate (183,0);
-  fill(earth);
+  fill(earth); //3rd highest orbit speed
   ellipse(0,0,45,45);
   popMatrix();
   
   pushMatrix();
-  rotate(theta);
+  rotate(theta*1.2);
   translate (226,0);
-  fill(mars);
+  fill(mars); //4th highest orbit speed
   ellipse(0,0,30,30);
   popMatrix();
   
   pushMatrix();
-  rotate(theta);
+  rotate(theta*0.8);
   translate (280,0);
   fill(jupiter);
   ellipse(0,0,70,70);
   popMatrix();
   
   pushMatrix();
-  rotate(theta);
+  rotate(theta*0.5);
   translate (343,0);
   fill(saturn);
   ellipse(0,0,50,50);
   popMatrix();
   
   pushMatrix();
-  rotate(theta);
+  rotate(theta*0.3);
   translate (400,0);
   fill(uranus);
   ellipse(0,0,47,47);
   popMatrix();
-  
-  pushMatrix();
-  rotate(theta);
-  translate (395,0);
-  fill(uranus);
-  ellipse(0,0,47,47);
-  popMatrix();
-  
+   
    pushMatrix();
-  rotate(theta);
+  rotate(theta*.1);
   translate (450,0);
   fill(neptune);
   ellipse(0,0,47,47);
