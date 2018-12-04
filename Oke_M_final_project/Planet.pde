@@ -3,6 +3,7 @@ class Planet{
   float distance; //distance from sun 
   PImage texture;
   PShape globe;
+  float speed;
   
   Planet (float r, float d, PImage t){
     radius = r;
@@ -12,17 +13,17 @@ class Planet{
     
     noStroke();
     noFill();
-    globe = createShape(SPHERE,radius);
-    globe.setTexture(t);
+    globe = createShape(SPHERE, radius); //sphere is made based on radius of planet
+    globe.setTexture(t); //texture of sphere should be image of planet
   }
   
   void display (){
     noStroke();
-  
     translate(distance,0);
     shape(globe);
-   // sphere(radius);
-     //ellipse (0,0,radius, radius);
   
 }
+  void planetinfo(){ //https://nssdc.gsfc.nasa.gov/planetary/factsheet/
+    
+  }
 }
