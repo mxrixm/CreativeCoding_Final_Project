@@ -1,29 +1,31 @@
-class Planet{
-  float radius; // size of planet
-  float distance; //distance from sun 
+class Planet {
+  float radius;
+  float distance;
+  float speed;
+  float theta;
   PImage texture;
   PShape globe;
-  float speed;
-  
-  Planet (float r, float d, PImage t){
-    radius = r;
-    distance = d; 
-    texture = t; 
-    
-    
-    noStroke();
-    noFill();
-    globe = createShape(SPHERE, radius); //sphere is made based on radius of planet
-    globe.setTexture(t); //texture of sphere should be image of planet
+
+  Planet(float distance, float radius, float speed, PImage texture) {
+    this.radius = radius;
+    this.distance = distance;
+    this.speed = speed;
+    this.texture = texture;
+
+    globe = createShape(SPHERE, radius); //sphere shpae called globe, sphere size changes based on radius
+    globe.setTexture(texture); //
   }
-  
-  void display (){
-    noStroke();
-    translate(distance,0);
-    shape(globe);
-  
-}
-  void planetinfo(){ //https://nssdc.gsfc.nasa.gov/planetary/factsheet/
-    
+
+  void display() {
+
+
+    rotateY(theta);
+    theta += .01 * speed; 
+    pushMatrix();
+    translate (distance, 0, 0); //distance from sun, sun will not translate
+
+    rotateY((millis() * TWO_PI/3000) % TWO_PI); //rotate planet along y axis
+    shape(globe); //the planet is drawn
+    popMatrix();
   }
 }
