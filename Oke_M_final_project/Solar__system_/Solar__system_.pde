@@ -26,7 +26,7 @@ void setup(){
   neptune = loadImage("images/neptunemap.jpg");
   
   noStroke();
- // fill(255);
+  fill(255);
   sphereDetail(40); //smoothness of sphere
  
   
@@ -46,8 +46,8 @@ void draw(){
   background (0);
   
   
-  for (int i = 0; i<9; i++){ //plane
-    Planet p = (Planet) system.get(i); 
+  for (int i = 0; i<9; i++){
+    Planet p = (Planet) system.get(i);
     p.display();
   }
 }
