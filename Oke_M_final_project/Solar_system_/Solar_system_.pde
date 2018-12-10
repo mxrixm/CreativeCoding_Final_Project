@@ -9,7 +9,10 @@ PImage jupiter;
 PImage neptune;
 float distance;
 char keyAnswer;
-
+boolean Info;
+float dir = 115*4; //for lighting, sun radius * 4
+float angle = PI;
+float con = 0;
 import peasy.*; //cam library http://mrfeinberg.com/peasycam/, https://www.youtube.com/watch?v=dncudkelNxw
 // can zoom in/zoom out and control camera angles with peasy
 
@@ -48,25 +51,21 @@ void setup() {
 
 void draw() {
   background (0);
-
+  
+  spotLight(200, 200, 200, dir, 0, 0, -1, 0, 0, angle, con);
+  spotLight(200, 200, 200, -dir, 0, 0, 1, 0, 0, angle, con);
+  spotLight(200, 200, 200, 0, dir, 0, -1, 0, 0, angle, con);
+  spotLight(200, 200, 200, 0, -dir, 0, 0, 1, 0, angle, con);
+  spotLight(200, 200, 200, 0, 0, dir, 0, -1, 0, angle,con);
+  spotLight(200, 200, 200, 0, 0, -dir, 0, 0, 1, angle, con);
 
   for (int i = 0; i<9; i++) { //as long as i < 9 do what's below
     Planet p = (Planet) system.get(i); 
     p.display(); //draw planet
-    p.orbit();
-
-    keyAnswer=key;
-
-    switch(keyAnswer) {
-    case 's':
-      pushMatrix();
-      ellipse(500, 500, 400, 400);
-      popMatrix();
-      break;
+    p.orbit(); //draw orbit path
     
-    default:
-      break;
-      
-    }
+
+
+     
   }
 }

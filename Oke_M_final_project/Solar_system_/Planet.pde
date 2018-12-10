@@ -5,6 +5,7 @@ class Planet {
   float theta;
   PImage texture;
   PShape globe;
+  String name;
 
   Planet(float distance, float radius, float speed, PImage texture) {
     this.radius = radius;
@@ -23,7 +24,7 @@ noStroke();
     pushMatrix();
     translate (distance, 0, 0); //distance from sun, sun in center
 
-    rotateY( TWO_PI/2000 ); //rotate planet along y axis
+    rotateY(TWO_PI/2000); //rotate planet along y axis
     shape(globe); //the planet is drawn
     popMatrix();
   }
