@@ -50,7 +50,7 @@ void setup() {
   font = createFont("data/spaceranger.ttf", 400);
   
   //loading images of planets 
-  sun = loadImage ("data/sunmap.jpg"); 
+  sun = loadImage ("data/sunmap1.jpg"); 
   earth = loadImage ("data/earthmap1k.jpg");
   venus = loadImage ("data/venusmap.jpg");
   mars = loadImage("data/mars_1k_color.jpg");
