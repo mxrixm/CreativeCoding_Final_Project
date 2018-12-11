@@ -6,12 +6,17 @@ class Planet {
   PImage texture;
   PShape globe;
   String name;
-
-  Planet(float distance, float radius, float speed, PImage texture) {
+  float r;
+  float g;
+  float b;
+  Planet(float distance, float radius, float speed, PImage texture, float r, float g, float b) {
     this.radius = radius;
     this.distance = distance;
     this.speed = speed;
     this.texture = texture;
+    this.r = r;
+    this.g = g;
+    this.b = b;
 noStroke();
     globe = createShape(SPHERE, radius); //sphere shpae called globe, sphere size changes based on radius
     globe.setTexture(texture); //
@@ -32,7 +37,7 @@ noStroke();
     pushMatrix();
     rotateX(PI/2); //rotate the ellipse so that it's on the x axis
     strokeWeight(2);
-    stroke(255);
+    stroke(r,g,b);
     noFill();
     ellipse(0,0,distance*2, distance*2); //multiply distances by 2 so the orbit path is drawn in the middle of the planet
     popMatrix();
